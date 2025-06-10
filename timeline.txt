@@ -1,0 +1,115 @@
+Siap! Berikut timeline 3 minggu lengkap dengan langkah-langkah praktis untuk tiap minggu supaya kamu bisa langsung action tanpa bingung:
+
+---
+
+# 📅 Timeline 3 Minggu + Langkah-Langkah: Backend E-Commerce API Express.js
+
+---
+
+### **Minggu 1: Setup & Autentikasi**
+
+**Langkah:**
+
+1. **Inisialisasi Proyek**
+
+   * `npm init -y`
+   * Install `express`, `dotenv`, `cors`, `morgan`, `nodemon`
+   * Setup struktur folder dasar (`src/`, dll)
+   * Buat `app.js` dengan middleware dasar (cors, json, morgan)
+
+2. **Setup Database**
+
+   * Install `prisma` & `@prisma/client`
+   * `npx prisma init`
+   * Setting `DATABASE_URL` di `.env` (PostgreSQL)
+   * Buat model User di `prisma/schema.prisma`
+   * `npx prisma migrate dev --name init`
+
+3. **Implementasi Auth**
+
+   * Install `bcrypt` & `jsonwebtoken`
+   * Buat route register (hash password) & login (generate JWT)
+   * Middleware JWT untuk proteksi route
+   * Test endpoint dengan Postman
+
+4. **Version Control**
+
+   * Inisialisasi Git & push ke GitHub
+   * Commit rutin setelah tiap fitur
+
+---
+
+### **Minggu 2: CRUD Produk & Keranjang**
+
+**Langkah:**
+
+1. **Model Produk**
+
+   * Tambahkan model Produk di Prisma (`name`, `desc`, `price`, `stock`, `image`)
+   * Migrate database
+
+2. **CRUD Produk**
+
+   * Buat routes: Create, Read (list & detail), Update, Delete
+   * Middleware proteksi role (admin/seller only)
+   * Validasi input dengan `express-validator` atau `zod`
+
+3. **Upload Gambar Produk**
+
+   * Install dan setup `multer` untuk upload gambar
+   * Simpan file di folder lokal `/uploads`
+
+4. **Model & Endpoint Keranjang**
+
+   * Model Keranjang (userId, produkId, quantity)
+   * Endpoint tambah produk ke keranjang
+   * Endpoint lihat isi keranjang user
+
+5. **Testing & Dokumentasi**
+
+   * Test semua endpoint dengan Postman / Swagger
+   * Push kode ke GitHub
+
+---
+
+### **Minggu 3: Order, Caching & Deployment**
+
+**Langkah:**
+
+1. **Model Order & Endpoint**
+
+   * Buat model Order (userId, status, total, dll) dan relasi
+   * Endpoint buat order (checkout)
+   * Update stok produk otomatis saat checkout
+
+2. **Caching dengan Redis**
+
+   * Install Redis & `redis` npm package
+   * Setup caching untuk list produk populer
+   * Implementasi cache invalidation jika data berubah
+
+3. **Rate Limiting & Logging**
+
+   * Install `express-rate-limit`
+   * Pasang logging dengan `winston` atau `morgan` konfigurasi custom
+
+4. **Docker & Deployment**
+
+   * Buat `Dockerfile` dan `docker-compose.yml` (optional)
+   * Deploy aplikasi ke Railway / Render
+   * Setup GitHub Actions untuk CI/CD (test + deploy)
+
+5. **Dokumentasi Final**
+
+   * Buat dokumentasi API lengkap dengan Swagger / OpenAPI
+   * Update README: cara install, environment, testing
+
+---
+
+Kalau kamu mau, aku bisa juga kirimkan:
+
+* Contoh `Dockerfile` dan konfigurasi CI/CD
+* Template project starter lengkap dengan setup di atas
+* Checklist harian supaya kamu disiplin ngerjain tiap step
+
+Gimana? Mau lanjut buat template starter project dulu?
